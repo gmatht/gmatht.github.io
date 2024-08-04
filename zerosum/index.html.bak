@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ZeroSum</title>
+  </head>
+  <body>
+
+	  <h1>ZeroSum Accounts Reconciliation Tool</h1>
+
+<p>This tool is designed to help you match up one or more receipts with a single reimbursement. This means you can easily keep track of receipts you have not yet reimbursed and audit your books.</p>
+
+<p>Receipts are represented as negative values, and reimbursements as positive values.
+In general, the input should be a value in Dollars and Cents, some white space,
+and a description.</p>
+
+<p>We are solving a special case of the zero-sum problem, which is NP-Complete;
+a class of problems that can be very hard. So, instead of trying to find every
+solution, we try to find the easiest solution. So if Dave has been reimbursed
+for $3 and there is a receipt for $3 of Carrots, we assume Dave's reimbursement was
+for the Carrots. We only consider the possibility that Dave's reimbursement
+could have been for multiple receipts if it couldn't have been for a single receipt.</p>
+
+<p>If the tool is too slow, you can try simplifying the problem by finding reimbursements corresponding to many receipts and removing those receipts from the tool's input. Alternatively, you can <a href="zerosum.zip">download</a> the tool and run it directly.</p>
+
+<!-- form action="/action_page.php" -->
+  <!--textarea id="in" name="in" rows="40" cols="50" onChange="run_zerosum();"-->
+  <textarea id="in" name="in" rows="80" cols="90">
+-1.00	Apples
+-2.00	Bananas
+-3.00	Carrots
+3.00	Dave
+1.50	Fred
+</textarea>
+  <textarea id="out" name="out" rows="80" cols="90">
+  </textarea>
+  <br>
+  <!--input type="submit" value="Submit"-->
+</form>
+	  
+    <noscript>This page contains webassembly and javascript content, please enable javascript in your browser.</noscript>
+    <script>
+/*	  import * as wasm from "wasm-game-of-life";
+	  function run_zerosum(){
+		document.getElementById('out').value = '';
+		wasm.main(document.getElementById('in'));
+	  }*/
+	  function my_println(s) {
+		    document.getElementById('out').value += s;
+	  }
+    </script>	   
+	 
+    <script src="./bootstrap.js"></script>
+  </body>
+</html>
