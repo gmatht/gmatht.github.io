@@ -1,0 +1,15 @@
+{
+  "name": "debashc",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "debashc_bg.wasm",
+    "debashc.js",
+    "debashc.d.ts"
+  ],
+  "main": "debashc.js",
+  "types": "debashc.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
